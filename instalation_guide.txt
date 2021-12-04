@@ -1,0 +1,114 @@
+# Open Oracle VM VirtualBox and click on New
+
+1. Name: username42
+Type: Linux
+Version: Debian (64-bit)
+2. Continue>(1024MB)>Continue>Create>Continue>(8.00GB)>Create
+3. Open Settings>Storage
+4. Click on Empty under Controller: IDE
+5. Click on CD icon and select debian-10.9.0-amd64-netinst.iso, then click OK
+6. Click on Start. After the dialog opens, click Start and wait for VM to boot
+7. Select Install
+8. Choose language, location and keymap to use
+9. Wait for additional components to load
+10. Choose host name and domain name
+11. Enter and then re-enter Root Password
+12. Enter your name and username
+13. Choose a password and then re-enter password
+14. Wait for loading to finish
+15. Select Manual for Partitioning method
+16. Select SCSI1 (0,0,0) (sda), then select Yes
+17. Select created partition under SCSI1 (0,0,0) (sda)
+18. Select Create a new partition
+19. Choose partition size (u videu 500MB)
+20. Select Primary for Partition type
+21. Select Beginning for Location for the new partition
+22. Select Mount point and then choose "/boot"
+23. Select Done setting up the partition
+24. Select pri/log FREE SPACE partition
+25. Select Create new partition and type "max" for size
+26. Select Logical
+27. Select Mount point and then choose "Do not mount it"
+28. Select Done setting up the partition
+29. Select Configure encrypted volumes and then select Yes
+30. Select Create encrypted volumes
+31. Select /dev/sda5
+32. Select Done setting up the partition
+33. Select Finish, then select Yes
+34. Wait for Erasing data to complete
+35. Choose Encryption passphrase ("password") and then re-enter passphrase to verify
+36. Select Configure the Logical Volume Manager and then select Yes
+37. Select Create volume group and enter name ("LVMGroup")
+38. Select /dev/mapper/sda5_crypt
+39. Select Create logical volume
+40. Select Volume group ("VMGroup")
+41. Enter name ("root")
+42. Enter Logical volume size
+43. Select Create logical volume
+44. Select Volume group (VMGroup)
+45. Enter name ("swap")
+46. Enter size (1024M)
+47. Select Create logical volume
+48. Select Volume group ("VMGroup")
+49. Enter name ("home")
+50. Enter size (1G)
+51. Select Create logical volume
+52. Select Volume group ("VMGroup")
+53. Enter name ("var")
+54. Enter size (1G)
+55. Select Create logical volume
+56. Select Volume group ("VMGroup")
+57. Enter name ("srv")
+58. Enter size (1G)
+59. Select Create logical volume
+60. Select Volume group ("VMGroup")
+61. Enter name ("tmp")
+62. Enter size (1G)
+63. Select Create logical volume
+64. Select Volume group ("VMGroup")
+65. Enter name ("var-log")
+66. Enter size (1056MB)
+67. Select Finish
+68. Select "#1" below LV home
+69. Select Use as and choose Ext4
+70. Select Mount point and choose /home
+71. Select Done setting up the partition
+72. Select "#1" below LV root
+73. Select Use as and choose Ext4
+74. Select Mount point and choose / - the root filesystem
+75. Select Done setting up the partition
+76. Select "#1" below LV srv
+77. Select Use as and choose Ext4
+78. Select Mount point and choose /srv
+79. Select Done setting up the partition
+80. Select "#1" below LV swap
+81. Select Use as and choose Swap area
+82. Select Done setting up the partition
+83. Select "#1" below LV tmp
+84. Select Use as and choose Ext4
+85. Select Mount point and choose /tmp
+86. Select Done setting up the partition
+87. Select "#1" below LV var
+88. Select Use as and choose Ext4
+89. Select Mount point and choose /var
+90. Select Done setting up the partition
+91. Select "#1" below LV var-log
+92. Select Use as and choose Ext4
+93. Select Mount point and choose Enter manually and type /var/log
+94. Select Done setting up the partition
+95. Select Finish partitioning and write changes to disk
+96. Select Yes
+97. Wait for installation to complete
+98. When dialog appears, asking you to scan another CD or DVD, select No
+99. Choose Debian archive mirror country
+100. Leave proxy info blank
+101. Wait for download and installation to complete
+102. In Participate in the package usage survey dialog, select No
+103. When Choose software to install dialog appears, uncheck everything
+104. When Install GRUB dialog appears, select Yes
+105. Select /dev/sda
+106. Installation complete, select Continue
+107. System will reboot
+108. After booting, enter password to unlock disk sda5_crypt
+109. Enter username and password
+110. Type clear and then lsblk
